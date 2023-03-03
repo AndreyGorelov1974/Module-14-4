@@ -21,12 +21,13 @@ int main() {
 	float A[n][n];
 	float B[n];
 	float C[n];
+	float r = 1.0;
 
 	//инициализация и вывод матрицы А в консоль
 	std::cout << "A" << std::endl;
 	for (int i = 0; i < n; ++i) {
 		for (int j = 0; j < n; ++j) {
-			A[i][j] = 1.0 * i;
+			A[i][j] = 2.0f *(float)i;
 			std::cout << A[i][j] << " ";
 		}
 		std::cout << std::endl;
@@ -35,7 +36,7 @@ int main() {
 	//инициализация и вывод вектора B в консоль
 	std::cout << "B" << std::endl;
 	for (int i = 0; i < n; ++i) {
-		B[i] = (float)1;
+		B[i] = 1.0;
 		std::cout << B[i] << " ";
 	}
 	std::cout << std::endl;
@@ -45,8 +46,8 @@ int main() {
 	float summ = 0.0;
 	std::cout << "C" << std::endl;
 	for (int i = 0; i < n; ++i) {
-		for (int j = i + 1; j < n; ++j) {
-			summ += A[i][j] * B[i];
+		for (int j = 0; j < n; ++j) {
+			summ += A[i][j] * B[j];
 		}
 		C[i] = summ;
 		std::cout << C[i] << " ";
